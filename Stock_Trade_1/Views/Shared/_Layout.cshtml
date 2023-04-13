@@ -1,0 +1,369 @@
+﻿@using Stock_Trade_1.Models
+@{
+
+    Layout = null;
+}
+@{
+    string name_customer = "";
+    if (Session["customer"] != null)
+    {
+
+        name_customer = ((Customer)Session["customer"]).Customer_name;
+    }
+    if (Session["admin"] != null)
+    {
+        name_customer = ((Customer)Session["customer"]).Customer_name;
+    }
+}
+<!DOCTYPE html>
+<html>
+@Styles.Render("~/Content/css")
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Aurum Investment</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Corporate Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Rappo HTML Template v1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <!--Favicon-->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body id="top-header">
+
+    <!-- LOADER TEMPLATE -->
+    <div id="page-loader">
+        <div class="loader-icon fa fa-spin colored-border"></div>
+    </div>
+    <!-- /LOADER TEMPLATE -->
+    <!-- NAVBAR
+        ================================================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-navigation main-nav navbar-togglable trans-navigation">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="index.html-->
+            <!--<img src="~/images/companylogo.png" width="100" height="100" -->
+            <!-- </a>-->
+            <!-- Toggler -->
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse has-dropdown" id="navbarCollapse">
+                <!-- Links -->
+                <ul class="navbar-nav ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#!" id="navbarWelcome" role="button"
+                           aria-haspopup="true" aria-expanded="true">
+                            <br />
+                            <img src="~/images/companylogo.png" width="100" height="100" />
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="@Url.Action("Index", "Home")" id="navbarWelcome" role="button"
+                           aria-haspopup="true" aria-expanded="true">
+                            <br />
+                            <br />
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="@Url.Action("About", "Home")" class="nav-link js-scroll-trigger">
+                            <br />
+                            <br />
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="@Url.Action("Learn", "Home")" class="nav-link">
+                            <br />
+                            <br />
+                            Learn
+                        </a>
+                    </li>
+                    @{if (Session["customer"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Consultancy","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Consultancy
+                                </a>
+                            </li>
+                        }
+                    }
+
+
+
+                    @{if (Session["admin"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Admin_page_Customers","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Traders
+                                </a>
+                            </li>
+                        }
+                    }
+                    @{if (Session["admin"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Admin_page_Transactions","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Transactions
+                                </a>
+                            </li>
+                        }
+                    }
+
+                    @{if (Session["customer"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Stock_Market","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Buy Stocks
+                                </a>
+                            </li>
+                        }
+                    }
+                    @{if (Session["customer"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Stock_Sell_Market","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Sell Stocks
+                                </a>
+                            </li>
+                        }
+                    }
+                    @{if (Session["customer"] != null)
+                        {
+                            <li class="nav-item ">
+                                <a href="@Url.Action("Exit_Account","Home")" class="nav-link">
+                                    <br />
+                                    <br />
+                                    Exit Account
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+                <ul class="ml-lg-auto list-unstyled m-0 nav-btn">
+                    <li>
+                        <button type="button" class="btn btn-trans-white btn-circled">
+                            @{ if (Session["customer"] == null)
+                                {
+                                    @Html.ActionLink("Register/Login", "Register")
+                                }
+                                if (Session["customer"] != null)
+                                {
+                                    @Html.ActionLink(name_customer, "Account_Bridge")
+                                }
+                            }
+
+                        </button>
+                    </li>
+                </ul>
+            </div> <!-- / .navbar-collapse -->
+        </div> <!-- / .Container -->
+    </nav>
+
+    <!-- HERO
+       ================================================== -->
+    <section class="banner-area py-5" id="banner-4">
+        <div class="overlay feature-overlay"></div>
+        <!-- Content -->
+        <div class="container">
+            <div class="row  align-items-center justify-content-center">
+                <div class="col-md-12 col-lg-9">
+                    <div class="banner-content2 text-center style-2">
+                        <!-- Heading -->
+                        <h1 class="display-4 mb-4 ">
+                            Don't work for money, but let money work for you
+                        </h1>
+
+                        <!-- Subheading -->
+                        <p class="lead mb-5 pr-0">
+                            Pindom is set of landing and support pages aimed at helping companies promote new products and business launches.
+                        </p>
+
+                        <!-- Button -->
+                        <p class="mb-0">
+                            <a href="#!" target="_blank" class="btn btn-white btn-circled">
+                                Invest now
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+    @RenderBody()
+    <footer class="section " id="footer">
+        <div class="overlay footer-overlay"></div>
+        <!--Content -->
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-4 col-sm-12">
+                    <div class="footer-widget">
+                        <!-- Brand -->
+                        <a href="index.html" class="footer-brand text-white">
+
+                        </a>
+                        <p>
+                            Each theme featured at the Bootstrap marketplace has been reviewed by Bootstrap's creators.Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 ml-lg-auto col-sm-12">
+                    <div class="footer-widget">
+                        <h3>Account</h3>
+                        <!-- Links -->
+                        <ul class="footer-links ">
+                            <li>
+                                <a href="#!">
+                                    Terms and conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    Privacy policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    Affiliate services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    Help and support
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    Frequently Asked Question
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>About</h3>
+                        <!-- Links -->
+                        <ul class="footer-links">
+                            <li>
+                                <a href="about.html">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="service.html">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">
+                                    Pricing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="project.html">
+                                    Recent Projects
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="contact.html">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>Socials</h3>
+                        <!-- Links -->
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="https://www.facebook.com/themefisher"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+                            <li>
+                                <a href="https://www.twitter.com/themefisher">
+                                    <i class="fab fa-twitter"></i>Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.pinterest.com/themefisher/">
+                                    <i class="fab fa-pinterest-p"></i>Pinterest
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://themefisher.com/">
+                                    <i class="fab fa-linkedin"></i>linkedin
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">
+                                    <i class="fab fa-youtube"></i>YouTube
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+
+
+            <div class="row text-right pt-5">
+                <div class="col-lg-12">
+                    <div class="overflow-hidden">
+                        <!-- Copyright -->
+                        <p class="footer-copy">
+                            Copyright &copy;
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>. Designed &amp; Developed by <a class="current-year" href=#">Aurum</a>
+                        </p>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </footer>
+
+
+    <!--  Page Scroll to Top  -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <a id="scroll-to-top" class="scroll-to-top js-scroll-trigger" href="#top-header">
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!--
+    Essential Scripts
+    =====================================-->
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+</body>
+</html>
+

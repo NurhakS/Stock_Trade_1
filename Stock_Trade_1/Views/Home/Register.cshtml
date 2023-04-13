@@ -1,0 +1,83 @@
+﻿@model Stock_Trade_1.Models.Customer
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <section class="section" id="service">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 pl-4 text-center">
+                    <div class="service-heading">
+                        <h1>Don't work for money, but let money work for you</h1>
+                    </div>
+                </div>
+            </div>
+
+           
+
+                <section class="forms-section">
+
+                    <div class="forms">
+
+                        <div class="form-wrapper is-active">
+
+
+                            <button type="button" class="switcher switcher-signup" width="300" height="200">
+
+                                @Html.ActionLink("Login", "Login")
+
+
+                                <span class="underline"></span>
+                            </button>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form form-signup" style="margin-left:180px;">
+                                    <fieldset>
+
+
+                                        <div class="input-block">
+                                            <label for="signup-password-confirm">Username</label>
+                                            @Html.EditorFor(model => model.Customer_user_name, new { htmlAttributes = new { @class = "form-control" } })
+
+                                        </div>
+                                        <div class="input-block">
+                                            <label for="signup-password">Full Name</label>
+                                            @Html.EditorFor(model => model.Customer_name, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                        <div class="input-block">
+                                            <label for="signup-email">E-mail</label>
+                                            @Html.EditorFor(model => model.Customer_mail, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+
+                                        <div class="input-block">
+                                            <label for="signup-password-confirm">Password</label>
+                                            @Html.PasswordFor(model => model.Customer_password, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                        <div class="input-block">
+                                            <label for="signup-password-confirm">Telephone</label>
+                                            @Html.EditorFor(model => model.Customer_tel, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </fieldset>
+                                    <button type="submit" class="btn-signup" value="Register">Register</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+
+            
+
+
+                <!-- Closes box2 -->
+
+            </div> <!-- Closes container -->
+
+
+
+    </section>
+   

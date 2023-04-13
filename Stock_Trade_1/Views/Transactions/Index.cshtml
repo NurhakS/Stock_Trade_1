@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Stock_Trade_1.Models.Transaction>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Transaction_value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock_quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock.Stock_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trader.Trader_id)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction_value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock_quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock.Stock_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trader.Trader_id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Transaction_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Transaction_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Transaction_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

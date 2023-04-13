@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Stock_Trade_1.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_user_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_tel)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_user_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_tel)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Customer_id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Customer_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Customer_id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

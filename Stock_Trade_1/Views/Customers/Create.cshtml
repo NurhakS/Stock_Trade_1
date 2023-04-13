@@ -1,0 +1,65 @@
+﻿@model Stock_Trade_1.Models.Customer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section class="section" id="service">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 pl-4 text-center">
+                <div class="service-heading">
+                    <h1>Don't work for money, but let money work for you</h1>
+                </div>
+            </div>
+        </div>
+
+        <section class="forms-section" style="margin-right:360px;">
+
+            <div class="forms">
+                <div class="form-wrapper is-active">
+                    <button type="button" class="switcher switcher-login">
+                        @Html.ActionLink("Register", "Register")
+                        <span class="underline"></span>
+                    </button>
+                    @using (Html.BeginForm("Login", "Home"))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form form-login" style="margin-left:250px;">
+
+
+                            <fieldset>
+                                <div class="input-block">
+                                    <label for="login-email">Username</label>
+                                    @Html.TextBox("Customer_user_name", "", new { @class = "form-control", required = true })
+                                </div>
+                                <div class="input-block">
+                                    <label for="login-password">Password</label>
+                                    @Html.Password("Customer_password", "", new { @class = "form-control", required = true })<i class="fa fa-eye icon" onclick="togglePassword()"></i>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn-login">Login</button>
+
+                        </div>
+                    }
+
+                </div>
+        </section>
+        <script>
+                function togglePassword() {
+                    var element = document.getElementById('Customer_password');
+                    element.type = (element.type == 'password' ? 'text' : 'password');
+                }</script>
+
+
+
+        <!-- Closes box2 -->
+
+    </div> <!-- Closes container -->
+
+
+
+</section>

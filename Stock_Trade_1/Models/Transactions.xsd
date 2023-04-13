@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Transactions" targetNamespace="http://tempuri.org/Transactions.xsd" xmlns:mstns="http://tempuri.org/Transactions.xsd" xmlns="http://tempuri.org/Transactions.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Stock_TradeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Stock_TradeConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Stock_TradeConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransactionsTableAdapter" GeneratorDataComponentClassName="TransactionsTableAdapter" Name="Transactions" UserDataComponentName="TransactionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Stock_TradeConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Customer.Customer_user_name, Stock.Stock_name, [Transaction].Transaction_id, [Transaction].Transaction_value, [Transaction].Transaction_Type
+FROM            Trader INNER JOIN
+                         Customer ON Trader.Customer_id = Customer.Customer_id INNER JOIN
+                         [Transaction] ON Trader.Trader_id = [Transaction].Trader_id INNER JOIN
+                         Stock_Value INNER JOIN
+                         Stock ON Stock_Value.Stock_value_id = Stock.Stock_value_id ON [Transaction].Stock_id = Stock.Stock_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Customer_user_name" DataSetColumn="Customer_user_name" />
+              <Mapping SourceColumn="Stock_name" DataSetColumn="Stock_name" />
+              <Mapping SourceColumn="Transaction_id" DataSetColumn="Transaction_id" />
+              <Mapping SourceColumn="Transaction_value" DataSetColumn="Transaction_value" />
+              <Mapping SourceColumn="Transaction_Type" DataSetColumn="Transaction_Type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Transactions" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Transactions" msprop:Generator_UserDSName="Transactions">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Transactions" msprop:Generator_TableClassName="TransactionsDataTable" msprop:Generator_TableVarName="tableTransactions" msprop:Generator_RowChangedName="TransactionsRowChanged" msprop:Generator_TablePropName="_Transactions" msprop:Generator_RowDeletingName="TransactionsRowDeleting" msprop:Generator_RowChangingName="TransactionsRowChanging" msprop:Generator_RowEvHandlerName="TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransactionsRowDeleted" msprop:Generator_RowClassName="TransactionsRow" msprop:Generator_UserTableName="Transactions" msprop:Generator_RowEvArgName="TransactionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Customer_user_name" msprop:Generator_ColumnVarNameInTable="columnCustomer_user_name" msprop:Generator_ColumnPropNameInRow="Customer_user_name" msprop:Generator_ColumnPropNameInTable="Customer_user_nameColumn" msprop:Generator_UserColumnName="Customer_user_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Stock_name" msprop:Generator_ColumnVarNameInTable="columnStock_name" msprop:Generator_ColumnPropNameInRow="Stock_name" msprop:Generator_ColumnPropNameInTable="Stock_nameColumn" msprop:Generator_UserColumnName="Stock_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transaction_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTransaction_id" msprop:Generator_ColumnPropNameInRow="Transaction_id" msprop:Generator_ColumnPropNameInTable="Transaction_idColumn" msprop:Generator_UserColumnName="Transaction_id" type="xs:int" />
+              <xs:element name="Transaction_value" msprop:Generator_ColumnVarNameInTable="columnTransaction_value" msprop:Generator_ColumnPropNameInRow="Transaction_value" msprop:Generator_ColumnPropNameInTable="Transaction_valueColumn" msprop:Generator_UserColumnName="Transaction_value" type="xs:double" />
+              <xs:element name="Transaction_Type" msprop:Generator_ColumnVarNameInTable="columnTransaction_Type" msprop:Generator_ColumnPropNameInRow="Transaction_Type" msprop:Generator_ColumnPropNameInTable="Transaction_TypeColumn" msprop:Generator_UserColumnName="Transaction_Type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Transactions" />
+      <xs:field xpath="mstns:Transaction_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

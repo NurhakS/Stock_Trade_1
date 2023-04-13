@@ -1,0 +1,92 @@
+﻿@using Stock_Trade_1.Models
+@{
+    ViewBag.Title = "Consultancy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+
+}
+<section class="section" id="pricing">
+    <!-- Content -->
+    <div class="container">
+        <!-- / .row -->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6 col-md-6">
+
+
+                <div class="pricing-box">
+
+                    <h3>Standard</h3>
+                    <div class="price-block">
+                        <h2><small>$</small>13<span>monthly</span></h2>
+                    </div>
+                    <ul class="price-features list-unstyled">
+                        <li>Limited Consultancy</li>
+                        <li>E-mail Only support</li>
+                        <li>Working Hours Support </li>
+                        <li>Report of Last 3 Months</li>
+
+                    </ul>
+                    @if (ViewBag.number == 1)
+                    {
+                        <a href="#" class="btn btn-danger" style="font-size:20;">Current Membership</a>}
+
+
+                    @if (ViewBag.number != 1)
+                    {
+
+                        <a href="@Url.Action("Consultancy_Buy", "Home",new {id = 1 })" class="btn btn-primary btn-circled">Purchase Now</a>
+
+                    }
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="pricing-box">
+                    <h3>Premium</h3>
+                    <div class="price-block">
+                        <h2><small>$</small>23<span>monthly</span></h2>
+                    </div>
+
+                    <ul class="price-features list-unstyled">
+                        <li>Premium Consultancy</li>
+                        <li>E-mail and Telephone support via Message</li>
+                        <li>Working Hours Support </li>
+                        <li>Report of Last 3 Months and Next 3 Months Predictions</li>
+                    </ul>
+                    @if (ViewBag.number == 2)
+                    {
+                        <a href="#" class="btn btn-danger" style="font-size:20;">Current Membership</a>}
+                    @if (ViewBag.number != 2)
+                    {
+                        <a href="@Url.Action("Consultancy_Buy", "Home", new { id = 2 })" class="btn btn-primary btn-circled">Purchase Now</a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-8 col-md-6">
+                <div class="pricing-box ">
+                    <h3>Business Consultancy</h3>
+                    <div class="price-block">
+                        <h2><small>$</small>33<span>monthly</span></h2>
+                    </div>
+
+                    <ul class="price-features list-unstyled">
+                        <li>Unlimited Consultancy</li>
+                        <li>E-mail and Telephone support via Message,Call</li>
+                        <li>7/24 Support </li>
+                        <li>Report of Last Year and Next Year Predictions</li>
+                    </ul>
+                    @if (ViewBag.number == 3)
+                    {
+                        <a href="#" class="btn btn-danger" style="font-size:20;">Current Membership</a>}
+                    @if (ViewBag.number != 3)
+                    {
+                        <a href="@Url.Action("Consultancy_Buy", "Home", new { id = 3 })" class="btn btn-primary btn-circled">Purchase Now</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

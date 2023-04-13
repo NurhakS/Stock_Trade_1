@@ -1,0 +1,91 @@
+﻿@using Stock_Trade_1.Models
+@model IEnumerable<Stock_Trade_1.Models.Transaction>
+@{
+
+     Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+    var balance = ((Trader)Session["Trader"]).Balance;
+    var customer_type = ((Customer)Session["customer"]).Customer_type;
+    string user_name = ((Customer)Session["customer"]).Customer_user_name;
+    string name_customer = "";
+    if (Session["customer"] != null)
+    {
+
+
+        name_customer = ((Customer)Session["customer"]).Customer_name;
+    }
+
+    if (Session["admin"] != null)
+    {
+        name_customer = ((Customer)Session["customer"]).Customer_name;
+    }
+    }
+}
+
+    <section class="section" id="service">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 pl-4 text-center">
+                    <div class="service-heading">
+                        <h1>Don't work for money, but let money work for you</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Company Name</th>
+
+                            <th>High Price	</th>
+                            <th>Low Price</th>
+                            <th>Current Price	</th>
+
+                            <th>Number Of Stocks</th>
+                            <th>Total Value	</th>
+
+                            <th>@user_name</th>
+                            <th>@name_customer</th>
+                            <th></th>
+                            <th>@customer_type</th>
+                            <th></th>
+
+                            <th>Balance<br />@ViewBag.total_value $</th>
+
+                            <th>Net Worth<br />@ViewBag.net_worth $</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Stock.Stock_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Stock.Company_name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Stock.Stock_Value.Stock_high_price)$</td>
+
+                            <td>@Html.DisplayFor(modelItem => item.Stock.Stock_Value.Stock_low_price)$</td>
+                            <td>@Html.DisplayFor(modelItem => item.Stock.Stock_Value.Stock_price)$</td>
+                            <td>@Html.DisplayFor(modelItem => item.Stock_quantity)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Transaction_value)$</td>
+
+
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+                <!-- Closes box2 -->
+
+            </div>
+
+
+    </section>
+
+    

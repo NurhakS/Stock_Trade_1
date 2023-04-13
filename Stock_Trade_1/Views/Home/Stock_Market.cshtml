@@ -1,0 +1,82 @@
+﻿@using Stock_Trade_1.Models
+@model IPagedList<Stock_Trade_1.Models.Stock>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+    <section class="section" id="service">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 pl-4 text-center">
+                    <div class="service-heading">
+                        <h1>Don't work for money, but let money work for you</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Company Name</th>
+                            <th>Company Industry</th>
+                            <th>High Price	</th>
+                            <th>Low Price</th>
+                            <th>Current Price	</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Stock_name)</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Company_name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Company_industry)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Stock_Value.Stock_high_price)$
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Stock_Value.Stock_low_price)$
+                                </td>
+                                <td> @Html.DisplayFor(modelItem => item.Stock_Value.Stock_price)$</td>
+
+                                <td>
+                                    
+                                    <a class="btn btn-sm btn-success" href="@Url.Action("Stock_Buy_Sell","Home",new {Stock_id=item.Stock_id})" style="padding: 0.05rem 0.2rem;"><h3 style="color:white;">Trade</h3></a>
+                                </td>
+                            </tr>
+                        }
+
+                        <tr colspan="7"><td colspan="7">@Html.PagedListPager(Model, page => Url.Action("Stock_Market", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)   </td></tr>
+
+
+                    </tbody>
+                </table>
+
+
+
+                <!-- Closes box2 -->
+
+            </div> <!-- Closes container -->
+
+
+
+    </section>
+
+
+
+    

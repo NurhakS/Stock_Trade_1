@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Stock_Trade_1.Models.Stock>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+               Stock Name
+            </th>
+            <th>
+               Company_name
+            </th>
+            <th>
+              Company_industry
+            </th>
+            <th>
+               Stock High Price
+            </th>
+            <th>
+                Stock Low Price
+            </th>
+            <th>
+                Current Price
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company_industry)
+        </td>
+        @Html.DisplayFor(modelItem => item.Stock_Value.Stock_high_price)
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Stock_Value.Stock_low_price)
+    </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock_Value.Stock_price)
+        </td>
+    </tr>
+    }
+    
+    </table>
+</body>
+</html>
