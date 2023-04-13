@@ -21,6 +21,9 @@ If you bought any stocks you can  find the list here but if  you sold all of you
 ![Stock_Sekk_Market_Stock](https://user-images.githubusercontent.com/95230241/231739597-97687f47-8f06-4b16-9f01-45b7bf3277b2.png)
 Stock Sell Page
 ![Stock_Sell_Page](https://user-images.githubusercontent.com/95230241/231740187-d04482ff-4495-4e27-b3eb-008481c9f61d.png)
+Consultancy subscriptions page current membership button will change accordingly to your subscription.
+![Consultancy_Stock](https://user-images.githubusercontent.com/95230241/231746585-686a02ac-c340-4b62-8bd6-6bf87cecca78.png)
+
 For accessing admin panel and feautre you need to logged in with classic username:admin password:admin And homepage change accordingly .
 ![Admin_Index_Stock](https://user-images.githubusercontent.com/95230241/231740447-3e3d40b0-7746-4f97-871f-b55325828e6a.png)
 You can access summary of customers and details of customers.
@@ -33,8 +36,10 @@ You can download every one of them with two options PDF/Excel  this two are just
 Customers PDF
 ![Customers_Report_PDF_Stock](https://user-images.githubusercontent.com/95230241/231740950-bb20e781-7cac-4b5f-9cef-f515aed68f55.png)
 Transactions Excel
+
 ![Transactions_Report_Excel_Stock](https://user-images.githubusercontent.com/95230241/231741006-3ebac9f1-634c-4686-bcb3-c43caa3aa470.png)
 If you have no idea about stock trading and finance you can get broad idea about concept via our learn page.
+
 ![Learn_Stock](https://user-images.githubusercontent.com/95230241/231741147-81eeb40c-0e49-4099-8038-bf36e4d45d08.png)
 And our staff.
 ![About_Stock](https://user-images.githubusercontent.com/95230241/231741259-f6381588-e786-423d-9ed0-c3d46b5bf404.png)
