@@ -743,7 +743,7 @@ namespace Stock_Trade_1.Controllers
                         }) ;
                   }
 
-                if (name_customer.Customer_id==name_trader.Customer_id)
+                if (name_customer.Customer_id==name_trader.Customer_id && Stock_quantity>0)
                 {
 
                 MessageBox.Show("Transfer succesful.", "Succesful", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -760,6 +760,15 @@ namespace Stock_Trade_1.Controllers
                 
                
                 }
+            else 
+            {
+
+                MessageBox.Show("Stock Quantity can't be negative.", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                return RedirectToAction("Stock_Buy_Sell", new
+                {
+                    Stock_id = Stock_id
+                });
+            }
             
            
 
