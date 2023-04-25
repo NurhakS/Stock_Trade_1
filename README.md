@@ -1,5 +1,5 @@
 # Stock_Trade_1
-Stock trading web Applicatiion using Asp.net Platform
+Stock trading web Applicatiion using Asp.net Platform and SQL Server
 First you need download and execute database. If you encounter any error while running visual studio please change the name of folder Stock_Trade_1-master to Stock_Trade_1.
 
 Homepage when you aren't logged in . You can register/login clicking through button you saw in right side of page.
