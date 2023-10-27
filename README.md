@@ -2,6 +2,8 @@
 Stock trading web Applicatiion using Asp.net Platform and SQL Server
 First you need download and execute database. If you encounter any error while running visual studio please change the name of folder Stock_Trade_1-master to Stock_Trade_1.
 
+Stock Trade Database Diagram
+![stock_database](https://github.com/NurhakS/Stock_Trade_1/assets/95230241/347c1c84-3f4c-4e63-93d7-94124bf2f1e8)
 Homepage when you aren't logged in . You can register/login clicking through button you saw in right side of page.
 ![Index_Stock](https://user-images.githubusercontent.com/95230241/231738312-ce0dac3e-00a9-4ac1-abf9-503013f31ac2.png)
 Register Page
